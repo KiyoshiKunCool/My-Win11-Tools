@@ -12,6 +12,10 @@ Check our other version of Windows 10/11 Debloater called 'Sophia Script for Win
 ►Link: https://benchtweakgaming.com/2020/10/27/windows-10-debloat-tool/
 This other version is made in collaboration with farag2 (Dmitry Nefedov).
 
+UPDATE v1.4
+-----------
+Added ToolTip languages: German, Italian, and Romanian. Folder called 'Localizations' created to store all tooltips.txt files.
+
 UPDATE v1.3
 -----------
 Added ToolTip languages: Portuguese, Japanese and Korean, Fixed some bugs

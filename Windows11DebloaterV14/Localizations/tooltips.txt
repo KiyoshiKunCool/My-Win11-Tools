@@ -28,6 +28,8 @@ DisableAppsSilentInstalling; Turn off automatic installing suggested apps;
 EnableAppsSilentInstalling; Turn on automatic installing suggested apps;
 DisableWhatsNewInWindows; Disable suggestions on how I can set up my device;
 EnableWhatsNewInWindows; Offer suggestions on how I can set up my device;
+DisableTailoredExperiences; Do not let Microsoft use your diagnostic data for personalized tips, ads, and recommendations;
+EnableTailoredExperiences; Let Microsoft use your diagnostic data for personalized tips, ads, and recommendations;
 DisableBingSearch; Disable Bing search in the Start Menu;
 EnableBingSearch; Enable Bing search in the Start Menu
 
@@ -197,7 +199,7 @@ EnableAuditProcess; Enable events auditing generated when a process is created (
 DisableAuditProcess; Disable events auditing generated when a process is created (starts);
 EnableCommandLineProcessAudit; Include command line in process creation events;
 DisableCommandLineProcessAudit; Do not include command line in process creation events;
-EnableEventViewerCustomView; Create the "Process Creation" Event Viewer сustom view to log the executed processes and their arguments;
+EnableEventViewerCustomView; Create the "Process Creation" Event Viewer Ñustom view to log the executed processes and their arguments;
 DisableEventViewerCustomView; Remove the "Process Creation" Event Viewer custom view;
 EnablePowerShellModulesLogging; Enable logging for all Windows PowerShell modules;
 DisablePowerShellModulesLogging; Disable logging for all Windows PowerShell modules;
@@ -239,14 +241,12 @@ ShowBitLockerContext; Show the "Turn on BitLocker" item in the drives context me
 HideCompressedFolderNewContext; Hide the "Compressed (zipped) Folder" item from the "New" context menu;
 ShowCompressedFolderNewContext; Show the "Compressed (zipped) Folder" item to the "New" context menu;
 EnableMultipleInvokeContext; Enable the "Open", "Print", and "Edit" items if more than 15 files selected;
-DisableMultipleInvokeContext; Disable the "Open", "Print", and "Edit" items if more than 15 files selected
-HideUseStoreOpenWith; Hide the "Look for an app in the Microsoft Store" item in the "Open with" dialog;
+DisableMultipleInvokeContext; Disable the "Open", "Print", and "Edit" items if more than 15 files selected HideUseStoreOpenWith;
 ShowUseStoreOpenWith; Show the "Look for an app in the Microsoft Store" item in the "Open with" dialog;
 HideOpenWindowsTerminalContext; Hide the "Open in Windows Terminal" menu option in the folders context menu;
 ShowOpenWindowsTerminalContext; Show the "Open in Windows Terminal" menu option in the folders context menu;
 HideOpenWindowsTerminalAdminContext; Hide the "Open in Windows Terminal (Admin)" item from the Desktop and folders context menu;
 ShowOpenWindowsTerminalAdminContext; Show the "Open in Windows Terminal (Admin)" item in the Desktop and folders context menu
-
 
 <#other#>
 

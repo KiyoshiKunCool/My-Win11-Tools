@@ -28,6 +28,8 @@ DisableAppsSilentInstalling; Tắt tự động cài đặt ứng dụng đề x
 EnableAppsSilentInstalling; Bật cài đặt tự động các ứng dụng được đề xuất;
 DisableWhatsNewInWindows; Tắt các đề xuất về cách tôi có thể thiết lập thiết bị của mình;
 EnableWhatsNewInWindows; Đưa ra các đề xuất về cách tôi có thể thiết lập thiết bị của mình;
+DisableTailoredExperiences; Không cho phép Microsoft sử dụng dữ liệu chẩn đoán của bạn cho các mẹo, quảng cáo và đề xuất được cá nhân hóa;
+EnableTailoredExperiences; Cho phép Microsoft sử dụng dữ liệu chẩn đoán của bạn cho các mẹo, quảng cáo và đề xuất được cá nhân hóa;
 DisableBingSearch; Tắt tìm kiếm Bing trong Menu Bắt đầu;
 EnableBingSearch; Bật tìm kiếm Bing trong Menu Bắt đầu
 
