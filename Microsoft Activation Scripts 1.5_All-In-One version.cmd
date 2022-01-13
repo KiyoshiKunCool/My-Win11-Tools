@@ -46,7 +46,7 @@ set "Path=%SysPath%;%SystemRoot%;%SysPath%\Wbem;%SysPath%\WindowsPowerShell\v1.0
 
 cls
 color 07
-title  Microsoft Activation Scripts AIO 1.5
+title  Microsoft Activation Scripts - AIO - 1.5
 
 set _elev=
 if /i "%~1"=="-el" set _elev=1
