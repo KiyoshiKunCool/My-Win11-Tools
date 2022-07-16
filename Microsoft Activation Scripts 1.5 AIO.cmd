@@ -1,20 +1,6 @@
 @setlocal DisableDelayedExpansion
 @echo off
 
-
-
-::============================================================================
-::
-::   This script is a part of 'Microsoft Activation Scripts' (MAS) project.
-::
-::   Homepage: windowsaddict.ml
-::      Email: windowsaddict@protonmail.com
-::
-::============================================================================
-
-
-
-
 ::========================================================================================================================================
 
 :: Re-launch the script with x64 process if it was initiated by x86 process on x64 bit Windows
@@ -69,7 +55,7 @@ set "eline=echo: &call :_color %Red% "==== ERROR ====" &echo:"
 
 if %winbuild% LSS 7600 (
 %nceline%
-echo Unsupported OS version detected.
+echo Unsupported OS version detected!
 echo Project is supported only for Windows 7/8/8.1/10/11 and their Server equivalent.
 goto MASend
 )
@@ -159,16 +145,14 @@ echo:             [5] Check Activation Status [wmi]
 echo:             [6] Extras                                               
 echo:             __________________________________________________      
 echo:                                                                     
-echo:             [7] Read Me
-echo:             [8] Exit                                
+echo:             [0] Exit                                
 echo:       ______________________________________________________________
 echo:
 call :_color2 %_White% "         " %_Green% "Enter a menu option in the Keyboard [1,2,3,4,5,6,7,8] :"
-choice /C:12345678 /N
+choice /C:0123456 /N
 set _erl=%errorlevel%
 
-if %_erl%==8 exit /b
-if %_erl%==7 start https://windowsaddict.ml & goto :MainMenu
+if %_erl%==0 exit /b
 if %_erl%==6 goto:Extras
 if %_erl%==5 setlocal & call :_Check_Status_wmi_ext & cls & endlocal & goto :MainMenu
 if %_erl%==4 setlocal & call :_Check_Status_vbs & cls & endlocal & goto :MainMenu
@@ -10498,8 +10482,5 @@ pause >nul
 exit /b
 
 :======================================================================================================================================================
-
-
-
 
 ::End::

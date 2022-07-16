@@ -1,6 +1,6 @@
 @setlocal DisableDelayedExpansion
 @echo off
-set "scriptver=2.6.2"
+set "scriptver=2.6.3"
 
 set "_cmdf=%~f0"
 if exist "%SystemRoot%\Sysnative\cmd.exe" (
@@ -32,7 +32,7 @@ reg query HKU\S-1-5-19 1>nul 2>nul
 if %ERRORLEVEL% equ 0 goto :START_SCRIPT
 
 echo =====================================================
-echo This script needs to be executed as an administrator.
+echo This script needs to be executed as an administrator!
 echo =====================================================
 echo.
 pause
@@ -108,6 +108,13 @@ reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Windows
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /f /v AllowTelemetry
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /f /v AllowTelemetry
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /f /v BranchReadinessLevel
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\Setup\WindowsUpdate" /f /v AllowWindowsUpdate
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup" /f /v AllowUpgradesWithUnsupportedTPMOrCPU
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig" /f /v BypassRAMCheck
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig" /f /v BypassSecureBootCheck
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig" /f /v BypassStorageCheck
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig" /f /v BypassTPMCheck
+reg delete "HKEY_CURRENT_USER\SOFTWARE\Microsoft\PCHC" /f /v UpgradeEligibility
 goto :EOF
 
 :ADD_INSIDER_CONFIG
@@ -181,32 +188,39 @@ goto :EOF
 
 :ENROLL
 echo Applying changes...
+echo Applied your changes!
+echo ======================================
+echo You are enrolled to %Channel% channel!
+echo ======================================
 call :RESET_INSIDER_CONFIG 1>NUL 2>NUL
 call :ADD_INSIDER_CONFIG 1>NUL 2>NUL
 bcdedit /set {current} flightsigning yes >nul 2>&1
-echo Done.
+echo Done!
 
 echo.
 if %FlightSigningEnabled% neq 1 goto :ASK_FOR_REBOOT
-echo Press any key to exit.
+echo Press any key to exit...
 pause >nul
 goto :EOF
 
 :STOP_INSIDER
 echo Applying changes...
+echo ===========================
+echo Insider builds are stopped!
+echo ===========================
 call :RESET_INSIDER_CONFIG 1>nul 2>nul
 bcdedit /deletevalue {current} flightsigning >nul 2>&1
-echo Done.
+echo Done!
 
 echo.
 if %FlightSigningEnabled% neq 0 goto :ASK_FOR_REBOOT
-echo Press any key to exit.
+echo Press any key to exit...
 pause >nul
 goto :EOF
 
 :ASK_FOR_REBOOT
 set "choice="
-echo A reboot is required to finish applying changes.
+echo A Reboot is required to finish applying changes, because Microsoft Flight Signing is Disabled!
 set /p choice="Would you like to reboot your PC? (y/N) "
 if /I "%choice%"=="y" shutdown -r -t 0
 goto :EOF
